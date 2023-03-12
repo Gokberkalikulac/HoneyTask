@@ -12,6 +12,7 @@ extension Color {
     
     static let theme = ColorTheme()
     static let launch = LaunchTheme()
+    static let type = TypeTheme()
     
 }
 
@@ -38,4 +39,11 @@ struct LaunchTheme {
     let accent = Color("LaunchAccentColor")
     let background = Color("LaunchBackgroundColor")
     
+}
+
+struct TypeTheme{
+    let casual = Color("Casual")
+    let important = Color("İmportant")
+    let critical = Color("Critical")
+
 }
