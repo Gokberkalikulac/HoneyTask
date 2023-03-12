@@ -14,10 +14,17 @@ struct FormView: View {
     let colors = ["Yellow","Red","Blue","Purple","Orange","Green"]
     var body: some View {
         VStack(spacing: 15) {
-            Text("Add Task")
+            Text("Assign Task")
                 .font(.title2)
+                .foregroundColor(Color.theme.accent)
                 .bold()
                 .frame(maxWidth: .infinity)
+            
+            Text("Customize your individual color etc...")
+                .foregroundColor(Color.theme.accent)
+                .font(.footnote)
+                .frame(maxWidth: .infinity,alignment: .leading)
+            
             
             VStack(alignment:.leading,spacing: 10){
                 Text("Task Color")
@@ -61,15 +68,6 @@ struct FormView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.top,10)
                     .textFieldStyle(.roundedBorder)
-            }
-            .overlay(alignment:.bottomTrailing  ) {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "calendar")
-                        .foregroundColor(Color.theme.accent)
-                }
-
             }
         }
         .frame(maxHeight: .infinity,alignment: .top )
