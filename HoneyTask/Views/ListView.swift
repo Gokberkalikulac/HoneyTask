@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ListView: View {
+     
     var body: some View {
         ScrollView(.vertical,showsIndicators: false){
             //Top
+            topHeader
+                .foregroundColor(Color.theme.red)
+            
+            //List Arranger Components
+            ListArrangerSection()
+                .padding(.top,5)
+            
+            //Task View List Will Come Here Later
+        }
+        .padding()
+    }
+}
+
+extension ListView {
+    var topHeader : some View {
+        HStack{
             VStack(alignment: .leading,spacing: 10){
                 Text("Welcome To Honey Task")
                     .font(.callout)
@@ -21,14 +38,23 @@ struct ListView: View {
             .frame(maxWidth: .infinity,alignment: .leading)
             .padding(.vertical)
             
-            //List Arranger Components
-            ListArrangerSection()
-                .padding(.top,5)
-            
-            
-            //Task View List Will Come Here Later
+            Button {
+                
+            } label: {
+                Label {
+                   Text("Add Task")
+                        .font(.subheadline)
+                } icon: {
+                    Image(systemName: "pencil.circle.fill")
+                }
+            }
+            .padding(.vertical,15)
+            .padding(.horizontal)
+            .background{
+                Capsule()
+                    .strokeBorder()
+            }            
         }
-        .padding()
     }
 }
 
